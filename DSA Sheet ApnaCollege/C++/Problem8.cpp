@@ -67,14 +67,10 @@ public:
 class Solution {
 public:
     vector<vector<int>> threeSum(vector<int>& nums) {
-
         vector<vector<int>> ans;
-
         sort(nums.begin(), nums.end());
-
         for (int i = 0; i < nums.size(); i++) {
 
-            // Skip duplicate first elements
             if (i > 0 && nums[i] == nums[i - 1]) {
                 continue;
             }
@@ -97,13 +93,11 @@ public:
                     left++;
                     right--;
 
-                    // Skip duplicate left values
                     while (left < right &&
                            nums[left] == nums[left - 1]) {
                         left++;
                     }
 
-                    // Skip duplicate right values
                     while (left < right &&
                            nums[right] == nums[right + 1]) {
                         right--;
